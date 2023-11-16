@@ -1,7 +1,19 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
+import { useEffect } from 'react'
+import { supabase } from './utils/supabase'
 
 export default function Home() {
+  useEffect(() => {
+    console.log("MyApp");
+    // setSession(supabase.auth.session());
+   supabase.auth.onAuthStateChange((_event, session) => {
+    console.log( {session})
+    //  setSession(session);
+   });
+  }, [])
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
