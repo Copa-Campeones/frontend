@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { useEffect } from 'react'
-import { supabase } from './utils/supabase'
+import { supabase } from '../utils/supabase'
 
 export default function Home() {
   useEffect(() => {
