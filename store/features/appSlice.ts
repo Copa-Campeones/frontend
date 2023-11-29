@@ -44,8 +44,9 @@ export const appSlice = createSlice({
             state.user = initialState.user;
             state.token = initialState.token;
             state.isLogged = initialState.isLogged;
+            localStorage.removeItem('copaUser');
         },
-        getUserData: (state, action: PayloadAction<AppState>) => {
+        getUserData: (state) => {
             const data : any = localStorage.getItem('copaUser');
 
             state.user = JSON.parse(data);
