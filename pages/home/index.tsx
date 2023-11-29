@@ -1,11 +1,11 @@
+import Header from "@/components/Header/Header";
+import { useSelector } from "react-redux";
 
 
 function Home() {
-  const session = true;
-
   return (
     <>
-      
+      <Header />
     </>
   )
 }
