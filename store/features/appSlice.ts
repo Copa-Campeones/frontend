@@ -1,7 +1,6 @@
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-// Define a type for the slice state
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 interface AppState {
     user: {
@@ -13,6 +12,7 @@ interface AppState {
     };
     token: string;
     isLogged: boolean;
+    partys: Array<any>;
 }
 
 // Define the initial state using that type
@@ -27,7 +27,13 @@ const initialState: AppState = {
     },
     token: '',
     isLogged: false,
+    partys: [],
 };
+
+export const getPartys:any = createAsyncThunk('app/getPartys', async () => {
+    const { data } = await axios.get('/api/partys');
+    return data;
+});
 
 
 export const appSlice = createSlice({
@@ -55,6 +61,12 @@ export const appSlice = createSlice({
                 state.isLogged = true;
             }
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getPartys.fulfilled, (state, action) => {
+            console.log(action.payload);
+            state.partys = action.payload;
+        });
     }
 });
 
