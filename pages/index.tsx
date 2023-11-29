@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { useEffect } from 'react'
-import AccountForm from '@/components/Account'
 import Login from '@/components/Login/Login'
 
 export default function Home() {

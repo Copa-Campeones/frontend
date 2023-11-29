@@ -1,11 +1,18 @@
+import Header from "@/components/Header/Header";
+import HomeBody from "@/components/HomeBody/HomeBody";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
 function Home() {
-  const session = true;
+    const session = useState(false);
+
+    
 
   return (
     <>
-      
+      <Header />
+      <HomeBody />
     </>
   )
 }

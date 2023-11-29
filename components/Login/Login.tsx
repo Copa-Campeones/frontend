@@ -24,7 +24,7 @@ function Login() {
         if (response.status === 200) {
             console.log('Usuario logueado');
 
-            localStorage.setItem('copaUSer', JSON.stringify(response.data));
+            localStorage.setItem('copaUser', JSON.stringify(response.data));
             router.push('/home');
         } else {
             alert('Error al loguear usuario');
