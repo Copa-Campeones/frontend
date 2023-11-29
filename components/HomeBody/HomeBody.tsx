@@ -1,7 +1,7 @@
 import { getPartys } from "@/store/features/appSlice";
 import { useAppDispatch } from "@/store/hook";
 import { useEffect, useState } from "react";
-import styles from './homeBody.module.css'
+import styles from './homebody.module.css'
 import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import axios from "axios";
