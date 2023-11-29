@@ -1,4 +1,4 @@
-import styles from './Register.module.css';
+import styles from './register.module.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
