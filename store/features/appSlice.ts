@@ -29,6 +29,7 @@ const initialState: AppState = {
     isLogged: false,
 };
 
+
 export const appSlice = createSlice({
     name: 'app',
     // `createSlice` will infer the state type from the `initialState` argument
@@ -44,10 +45,19 @@ export const appSlice = createSlice({
             state.token = initialState.token;
             state.isLogged = initialState.isLogged;
         },
-    },
+        getUserData: (state, action: PayloadAction<AppState>) => {
+            const data : any = localStorage.getItem('copaUser');
+
+            state.user = JSON.parse(data);
+
+            if (data.id !== 0) {
+                state.isLogged = true;
+            }
+        }
+    }
 });
 
 
-export const { login, logout } = appSlice.actions;
+export const { login, logout, getUserData } = appSlice.actions;
 
 export default appSlice.reducer;
