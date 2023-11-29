@@ -83,3 +83,18 @@ CREATE TRIGGER update_user_type_modtime
 BEFORE UPDATE ON infraction
 FOR EACH ROW
 EXECUTE PROCEDURE update_timestamp();
+
+create table notification(
+    id serial primary key,
+    user_id int not null,
+    text text not null,
+    created_at timestamp default current_timestamp,
+    updated_at timestamp default current_timestamp,
+    foreign key (user_id) references "user"(id),
+);
+
+CREATE TRIGGER update_user_type_modtime
+BEFORE UPDATE ON notification
+FOR EACH ROW
+EXECUTE PROCEDURE update_timestamp();
+
