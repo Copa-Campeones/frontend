@@ -10,10 +10,10 @@ function Home() {
     
 
   return (
-    <>
+    <div className="fullWidth">
       <Header />
       <HomeBody />
-    </>
+    </div>
   )
 }
 

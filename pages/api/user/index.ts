@@ -5,7 +5,7 @@ import { supabase } from "../../../utils/supabase";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
         const { email, password } = req.body;
-        const data = { email, password, user_type_id: 2, team_id: 0, name: "" };
+        const data = { email, password, user_type_id: 2, team_id: 3, name: "" };
         // create a new user en la tabla user no uses supabase auth
 
         const { data: newUser, error } = await supabase
